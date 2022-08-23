@@ -53,12 +53,6 @@ namespace InventoryMangementSystem
             txtPassword.Clear();
         }
 
-        private void cbSP_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbSP.Checked == false)
-                txtPassword.UseSystemPasswordChar = true;
-            else
-                txtPassword.UseSystemPasswordChar = false;
-        }
+       
     }
 }

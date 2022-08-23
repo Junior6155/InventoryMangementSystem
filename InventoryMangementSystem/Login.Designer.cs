@@ -37,7 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.lbClear = new System.Windows.Forms.Label();
-            this.cbSP = new System.Windows.Forms.CheckBox();
             this.lbExit = new System.Windows.Forms.Label();
             this.cmbRole = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -141,7 +140,7 @@
             this.btnLogin.FillColor = System.Drawing.Color.Red;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(289, 272);
+            this.btnLogin.Location = new System.Drawing.Point(348, 235);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(107, 39);
             this.btnLogin.TabIndex = 6;
@@ -152,7 +151,7 @@
             this.lbClear.AutoSize = true;
             this.lbClear.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbClear.ForeColor = System.Drawing.Color.Red;
-            this.lbClear.Location = new System.Drawing.Point(312, 326);
+            this.lbClear.Location = new System.Drawing.Point(500, 235);
             this.lbClear.Name = "lbClear";
             this.lbClear.Size = new System.Drawing.Size(52, 20);
             this.lbClear.TabIndex = 7;
@@ -160,18 +159,6 @@
             this.lbClear.Click += new System.EventHandler(this.lbClear_Click);
             this.lbClear.MouseEnter += new System.EventHandler(this.lbClear_MouseEnter);
             this.lbClear.MouseLeave += new System.EventHandler(this.lbClear_MouseLeave);
-            // 
-            // cbSP
-            // 
-            this.cbSP.AutoSize = true;
-            this.cbSP.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSP.Location = new System.Drawing.Point(472, 218);
-            this.cbSP.Name = "cbSP";
-            this.cbSP.Size = new System.Drawing.Size(132, 23);
-            this.cbSP.TabIndex = 8;
-            this.cbSP.Text = "Show Password";
-            this.cbSP.UseVisualStyleBackColor = true;
-            this.cbSP.CheckedChanged += new System.EventHandler(this.cbSP_CheckedChanged);
             // 
             // lbExit
             // 
@@ -209,7 +196,6 @@
             this.ClientSize = new System.Drawing.Size(623, 369);
             this.Controls.Add(this.cmbRole);
             this.Controls.Add(this.lbExit);
-            this.Controls.Add(this.cbSP);
             this.Controls.Add(this.lbClear);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label3);
@@ -238,7 +224,6 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.Label lbClear;
-        private System.Windows.Forms.CheckBox cbSP;
         private System.Windows.Forms.Label lbExit;
         private System.Windows.Forms.ComboBox cmbRole;
     }
