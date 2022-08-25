@@ -36,8 +36,9 @@ namespace InventoryMangementSystem
                 SqlCommand command = new SqlCommand(insertQuery,dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();
-                MessageBox.Show("Category Added Successfully", "Add Category", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Category Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dBCon.CloseCon();
+                getTable();
                 clear();
             }
             catch (Exception ex)
@@ -94,6 +95,40 @@ namespace InventoryMangementSystem
             txtID.Clear();
             txtName.Clear();
             txtDesc.Clear();
+        }
+
+        private void btnDelele_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string deleteQuery = "DELETE FROM Category WHERE CatId= " + txtID.Text + "";
+                SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
+                dBCon.OpenCon();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Category Deleted Successfully", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dBCon.CloseCon();
+                getTable();
+                clear();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lbExit_MouseEnter(object sender, EventArgs e)
+        {
+            lbExit.ForeColor = Color.Red;
+        }
+
+        private void lbExit_MouseLeave(object sender, EventArgs e)
+        {
+            lbExit.ForeColor = Color.Black;
         }
     }
 }
