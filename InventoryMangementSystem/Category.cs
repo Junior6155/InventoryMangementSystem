@@ -36,7 +36,7 @@ namespace InventoryMangementSystem
                 SqlCommand command = new SqlCommand(insertQuery,dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();
-                MessageBox.Show("Category Added Successfully", "Done");
+                MessageBox.Show("Category Added Successfully", "Add Category", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dBCon.CloseCon();
             }
             catch (Exception ex)
@@ -53,6 +53,30 @@ namespace InventoryMangementSystem
         private void Category_Load(object sender, EventArgs e)
         {
             getTable();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                string updateQuery = "UPDATE Category SET CatName = '" + txtName.Text + "', CatDes= '" + txtDesc.Text + "'WHERE CatId= " + txtID.Text + "";
+                SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
+                dBCon.OpenCon();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Category Updated Successfully", "Update Information",MessageBoxButtons.OK,MessageBoxIcon.Information );
+                dBCon.CloseCon();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataCat_Click(object sender, EventArgs e)
+        {
+            txtID.Text = dataCat.SelectedRows[0].Cells[0].Value.ToString();
+            txtName.Text = dataCat.SelectedRows[0].Cells[1].Value.ToString();
+            txtDesc.Text = dataCat.SelectedRows[0].Cells[2].Value.ToString();
         }
     }
 }

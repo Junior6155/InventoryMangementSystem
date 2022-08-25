@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnSelling = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSeller = new System.Windows.Forms.Button();
             this.lbExit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataCat = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelele = new System.Windows.Forms.Button();
@@ -45,6 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataCat = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCat)).BeginInit();
             this.SuspendLayout();
@@ -124,15 +127,6 @@
             this.panel1.TabIndex = 20;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dataCat
-            // 
-            this.dataCat.BackgroundColor = System.Drawing.Color.White;
-            this.dataCat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataCat.Location = new System.Drawing.Point(317, 123);
-            this.dataCat.Name = "dataCat";
-            this.dataCat.Size = new System.Drawing.Size(395, 368);
-            this.dataCat.TabIndex = 21;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -147,20 +141,21 @@
             // 
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(116, 394);
+            this.btnUpdate.Location = new System.Drawing.Point(108, 350);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(70, 30);
+            this.btnUpdate.Size = new System.Drawing.Size(70, 35);
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelele
             // 
             this.btnDelele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelele.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelele.Location = new System.Drawing.Point(214, 394);
+            this.btnDelele.Location = new System.Drawing.Point(206, 350);
             this.btnDelele.Name = "btnDelele";
-            this.btnDelele.Size = new System.Drawing.Size(70, 30);
+            this.btnDelele.Size = new System.Drawing.Size(70, 35);
             this.btnDelele.TabIndex = 16;
             this.btnDelele.Text = "Delete";
             this.btnDelele.UseVisualStyleBackColor = true;
@@ -169,9 +164,9 @@
             // 
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(18, 394);
+            this.btnAdd.Location = new System.Drawing.Point(10, 350);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(70, 30);
+            this.btnAdd.Size = new System.Drawing.Size(70, 35);
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -191,7 +186,7 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtName.ForeColor = System.Drawing.Color.Red;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(98, 180);
+            this.txtName.Location = new System.Drawing.Point(93, 163);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
@@ -213,7 +208,7 @@
             this.txtDesc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDesc.ForeColor = System.Drawing.Color.Red;
             this.txtDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDesc.Location = new System.Drawing.Point(98, 228);
+            this.txtDesc.Location = new System.Drawing.Point(93, 211);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.PasswordChar = '\0';
             this.txtDesc.PlaceholderText = "";
@@ -235,7 +230,7 @@
             this.txtID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtID.ForeColor = System.Drawing.Color.Red;
             this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID.Location = new System.Drawing.Point(98, 135);
+            this.txtID.Location = new System.Drawing.Point(93, 118);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.PlaceholderText = "";
@@ -247,7 +242,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 180);
+            this.label5.Location = new System.Drawing.Point(21, 163);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 23);
             this.label5.TabIndex = 9;
@@ -257,7 +252,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 228);
+            this.label3.Location = new System.Drawing.Point(5, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 23);
             this.label3.TabIndex = 7;
@@ -267,11 +262,62 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 135);
+            this.label1.Location = new System.Drawing.Point(26, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
+            // 
+            // dataCat
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataCat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataCat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataCat.ColumnHeadersHeight = 24;
+            this.dataCat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataCat.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataCat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataCat.Location = new System.Drawing.Point(282, 118);
+            this.dataCat.Name = "dataCat";
+            this.dataCat.RowHeadersVisible = false;
+            this.dataCat.Size = new System.Drawing.Size(441, 378);
+            this.dataCat.TabIndex = 21;
+            this.dataCat.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataCat.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataCat.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataCat.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataCat.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataCat.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataCat.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataCat.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataCat.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataCat.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataCat.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataCat.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataCat.ThemeStyle.HeaderStyle.Height = 24;
+            this.dataCat.ThemeStyle.ReadOnly = false;
+            this.dataCat.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataCat.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataCat.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataCat.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataCat.ThemeStyle.RowsStyle.Height = 22;
+            this.dataCat.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataCat.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataCat.Click += new System.EventHandler(this.dataCat_Click);
             // 
             // Category
             // 
@@ -286,6 +332,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Category";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category";
             this.Load += new System.EventHandler(this.Category_Load);
             this.panel1.ResumeLayout(false);
@@ -304,7 +351,6 @@
         private System.Windows.Forms.Button btnSeller;
         private System.Windows.Forms.Label lbExit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataCat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelele;
@@ -315,5 +361,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2DataGridView dataCat;
     }
 }
