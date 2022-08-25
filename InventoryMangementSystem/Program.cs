@@ -9,6 +9,11 @@ namespace InventoryMangementSystem
     internal static class Program
     {
         /// <summary>
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
@@ -16,7 +21,7 @@ namespace InventoryMangementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SplashScreen());
+            Application.Run(new Category());
         }
     }
 }
