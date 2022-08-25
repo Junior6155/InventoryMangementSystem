@@ -59,13 +59,20 @@ namespace InventoryMangementSystem
         {
             try 
             {
-                string updateQuery = "UPDATE Category SET CatName = '" + txtName.Text + "', CatDes= '" + txtDesc.Text + "'WHERE CatId= " + txtID.Text + "";
-                SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
-                dBCon.OpenCon();
-                command.ExecuteNonQuery();
-                MessageBox.Show("Category Updated Successfully", "Update Information",MessageBoxButtons.OK,MessageBoxIcon.Information );
-                dBCon.CloseCon();
-                getTable();
+                if (txtID.Text == "" || txtName.Text == "" || txtDesc.Text == "")
+                {
+                    MessageBox.Show("Missing Information", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string updateQuery = "UPDATE Category SET CatName = '" + txtName.Text + "', CatDes= '" + txtDesc.Text + "'WHERE CatId= " + txtID.Text + "";
+                    SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
+                    dBCon.OpenCon();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Category Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dBCon.CloseCon();
+                    getTable();
+                }
             }
             catch (Exception ex)
             {
