@@ -38,6 +38,7 @@ namespace InventoryMangementSystem
                 command.ExecuteNonQuery();
                 MessageBox.Show("Category Added Successfully", "Add Category", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dBCon.CloseCon();
+                clear();
             }
             catch (Exception ex)
             {
@@ -72,6 +73,7 @@ namespace InventoryMangementSystem
                     MessageBox.Show("Category Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dBCon.CloseCon();
                     getTable();
+                    clear();
                 }
             }
             catch (Exception ex)
@@ -85,6 +87,13 @@ namespace InventoryMangementSystem
             txtID.Text = dataCat.SelectedRows[0].Cells[0].Value.ToString();
             txtName.Text = dataCat.SelectedRows[0].Cells[1].Value.ToString();
             txtDesc.Text = dataCat.SelectedRows[0].Cells[2].Value.ToString();
+        }
+
+        private void clear()
+        {
+            txtID.Clear();
+            txtName.Clear();
+            txtDesc.Clear();
         }
     }
 }
