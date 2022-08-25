@@ -65,6 +65,7 @@ namespace InventoryMangementSystem
                 command.ExecuteNonQuery();
                 MessageBox.Show("Category Updated Successfully", "Update Information",MessageBoxButtons.OK,MessageBoxIcon.Information );
                 dBCon.CloseCon();
+                getTable();
             }
             catch (Exception ex)
             {
