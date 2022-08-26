@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataPro = new System.Windows.Forms.DataGridView();
+            this.txtQty = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cmbSearch = new System.Windows.Forms.ComboBox();
@@ -51,8 +55,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.btnSelling = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
-            this.txtQty = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.dataPro = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPro)).BeginInit();
             this.SuspendLayout();
@@ -60,9 +63,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.dataPro);
             this.panel1.Controls.Add(this.txtQty);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.dataPro);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.cmbSearch);
@@ -85,14 +88,37 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dataPro
+            // txtQty
             // 
-            this.dataPro.BackgroundColor = System.Drawing.Color.White;
-            this.dataPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataPro.Location = new System.Drawing.Point(304, 123);
-            this.dataPro.Name = "dataPro";
-            this.dataPro.Size = new System.Drawing.Size(439, 368);
-            this.dataPro.TabIndex = 21;
+            this.txtQty.BorderColor = System.Drawing.Color.Red;
+            this.txtQty.BorderRadius = 18;
+            this.txtQty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQty.DefaultText = "";
+            this.txtQty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtQty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtQty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtQty.ForeColor = System.Drawing.Color.Red;
+            this.txtQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQty.Location = new System.Drawing.Point(107, 337);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.PasswordChar = '\0';
+            this.txtQty.PlaceholderText = "";
+            this.txtQty.SelectedText = "";
+            this.txtQty.Size = new System.Drawing.Size(150, 30);
+            this.txtQty.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(28, 337);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 23);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Quantity";
             // 
             // label6
             // 
@@ -146,6 +172,7 @@
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -362,37 +389,55 @@
             this.btnCategory.UseVisualStyleBackColor = true;
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
-            // txtQty
+            // dataPro
             // 
-            this.txtQty.BorderColor = System.Drawing.Color.Red;
-            this.txtQty.BorderRadius = 18;
-            this.txtQty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQty.DefaultText = "";
-            this.txtQty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtQty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtQty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtQty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtQty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtQty.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtQty.ForeColor = System.Drawing.Color.Red;
-            this.txtQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtQty.Location = new System.Drawing.Point(107, 337);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.PasswordChar = '\0';
-            this.txtQty.PlaceholderText = "";
-            this.txtQty.SelectedText = "";
-            this.txtQty.Size = new System.Drawing.Size(150, 30);
-            this.txtQty.TabIndex = 23;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 337);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 23);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Quantity";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dataPro.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sitka Display", 11F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Display", 11F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataPro.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataPro.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataPro.Location = new System.Drawing.Point(295, 147);
+            this.dataPro.Name = "dataPro";
+            this.dataPro.RowHeadersVisible = false;
+            this.dataPro.Size = new System.Drawing.Size(436, 352);
+            this.dataPro.TabIndex = 24;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataPro.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataPro.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataPro.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataPro.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataPro.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
+            this.dataPro.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataPro.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataPro.ThemeStyle.HeaderStyle.Height = 23;
+            this.dataPro.ThemeStyle.ReadOnly = false;
+            this.dataPro.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataPro.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataPro.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
+            this.dataPro.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataPro.ThemeStyle.RowsStyle.Height = 22;
+            this.dataPro.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataPro.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataPro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPro_CellContentClick);
             // 
             // Product
             // 
@@ -444,8 +489,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnSelling;
         private System.Windows.Forms.Button btnCategory;
-        private System.Windows.Forms.DataGridView dataPro;
         private Guna.UI2.WinForms.Guna2TextBox txtQty;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2DataGridView dataPro;
     }
 }

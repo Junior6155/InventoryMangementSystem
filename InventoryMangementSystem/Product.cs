@@ -94,7 +94,51 @@ namespace InventoryMangementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtID.Text==""|| txtName.Text==""||txtPrice.Text==""||txtBB.Text==""||txtQty.Text=="")
+                {
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string updateQuery = "UPDATE Ptoduct SET ProdName='" + txtName.Text + "', ProdPrice=" + txtPrice.Text + ", ProdQty=" + txtQty.Text + ", ProdBB=" + txtBB.Text + ", ProdCat=" + cmbcategory.Text + "'WHERE ProdId=" + txtID.Text + "";
+                    SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
+                    dBCon.OpenCon();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Product Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dBCon.CloseCon();
+                    getTable();
+                    clear();
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void dataPro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtID.Text = dataPro.SelectedRows[0].Cells[0].Value.ToString();
+            txtName.Text = dataPro.SelectedRows[0].Cells[1].Value.ToString();
+            txtPrice.Text = dataPro.SelectedRows[0].Cells[2].Value.ToString();
+            txtQty.Text = dataPro.SelectedRows[0].Cells[3].Value.ToString();
+            txtBB.Text = dataPro.SelectedRows[0].Cells[4].Value.ToString();
+            cmbcategory.SelectedValue = dataPro.SelectedRows[0].Cells[5].Value.ToString();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string deleteQuery = "DELETE FROM Product WHERE ProdId=" + txtID.Text + "";
+            SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
+            dBCon.OpenCon();
+            command.ExecuteNonQuery();
+            MessageBox.Show("Product Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dBCon.CloseCon();
+            getTable();
+            clear();
         }
     }
 }
