@@ -32,7 +32,7 @@ namespace InventoryMangementSystem
         {
             try
             {
-                string insertQuery = "INSERT INTO Category VALUES(" + txtID.Text + ",'" + txtName.Text + "','" + txtDesc.Text + "')";
+                string insertQuery = "INSERT INTO Category VALUES(" + txtID.Text + ",'" + txtName.Text + "','" + txtDesc.Text + "', )";
                 SqlCommand command = new SqlCommand(insertQuery,dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();

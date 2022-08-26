@@ -36,6 +36,7 @@ namespace InventoryMangementSystem
         private void Product_Load(object sender, EventArgs e)
         {
             getCategory();
+            getTable();
         }
 
         private void getCategory()
@@ -49,6 +50,51 @@ namespace InventoryMangementSystem
             cmbcategory.ValueMember = "CatName";
             cmbSearch.DataSource = table;
             cmbSearch.ValueMember = "CatName";
+        }
+
+        private void getTable()
+        {
+            string selectQuerry = "SELECT * FROM Product";
+            SqlCommand command = new SqlCommand(selectQuerry, dBCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataPro.DataSource = table;
+        }
+
+        private void clear()
+        {
+            txtID.Clear();
+            txtName.Clear();
+            txtPrice.Clear();
+            txtBB.Clear();
+            txtBB.Clear();
+            cmbcategory.SelectedIndex = 0;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string insertQuery = "INSERT INTO Product VALUES(" + txtID.Text + ", '" + txtName.Text + "', '" + txtPrice.Text + "', '" + txtBB.Text + "', '"+txtQty.Text+"', '"+cmbcategory.Text+"')";
+                SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
+                dBCon.OpenCon();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Product Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dBCon.CloseCon();
+                getTable();
+                clear();
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
