@@ -130,5 +130,29 @@ namespace InventoryMangementSystem
         {
             lbExit.ForeColor = Color.Black;
         }
+
+        private void lbLogout_MouseEnter(object sender, EventArgs e)
+        {
+            lbLogout.ForeColor = Color.Red;
+        }
+
+        private void lbLogout_MouseLeave(object sender, EventArgs e)
+        {
+            lbLogout.ForeColor= Color.Black;
+        }
+
+        private void lbLogout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            Product product = new Product();
+            product.Show();
+            this.Hide();
+        }
     }
 }
