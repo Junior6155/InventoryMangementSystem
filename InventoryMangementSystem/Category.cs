@@ -154,5 +154,12 @@ namespace InventoryMangementSystem
             product.Show();
             this.Hide();
         }
+
+        private void btnSeller_Click(object sender, EventArgs e)
+        {
+            Seller seller = new Seller();
+            seller.Show();
+            this.Hide();
+        }
     }
 }

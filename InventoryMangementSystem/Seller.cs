@@ -107,15 +107,64 @@ namespace InventoryMangementSystem
             }
             else
             {
-                string deleteQuery = "DELETE FROM Seller WHERE SellerId=" + txtID.Text + "";
-                SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
-                dBCon.OpenCon();
-                command.ExecuteNonQuery();
-                MessageBox.Show("Seller Deleted Successfully", "Deleted Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dBCon.CloseCon();
-                getTable();
-                clear();
+                if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string deleteQuery = "DELETE FROM Seller WHERE SellerId=" + txtID.Text + "";
+                    SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
+                    dBCon.OpenCon();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Seller Deleted Successfully", "Deleted Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dBCon.CloseCon();
+                    getTable();
+                    clear();
+                }
             }
+        }
+
+        private void lbLogout_MouseEnter(object sender, EventArgs e)
+        {
+            lbLogout.ForeColor = Color.Red;
+        }
+
+        private void lbLogout_MouseLeave(object sender, EventArgs e)
+        {
+            lbLogout.ForeColor = Color.Black;
+        }
+
+        private void lbExit_MouseEnter(object sender, EventArgs e)
+        {
+            lbExit.ForeColor = Color.Red;
+        }
+
+        private void lbExit_MouseLeave(object sender, EventArgs e)
+        {
+            lbExit.ForeColor = Color.Black;
+        }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
+        }
+
+        private void lbLogout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            Product product = new Product();
+            product.Show();
+            this.Hide();
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            Category category = new Category();
+            category.Show();
+            this.Hide();
         }
     }
 }
