@@ -8,48 +8,71 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DGVPrinterHelper;
 
 namespace InventoryMangementSystem
 {
     public partial class Order : Form
     {
         DBConnect dBCon = new DBConnect();
+        DGVPrinter printer = new DGVPrinter();
         public Order()
         {
             InitializeComponent();
         }
 
-        private void getTable()
+        private void getCategory()
         {
-            string selectQuerry = "SELECT * FROM Seller";
+            string selectQuerry = "SELECT * FROM Category";
             SqlCommand command = new SqlCommand(selectQuerry, dBCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            dataSeller.DataSource = table;
+            cmbCat.DataSource = table;
+            cmbCat.ValueMember = "CatName";
+          }
+
+        private void getTable()
+        {
+            string selectQuerry = "SELECT * FROM Bill";
+            SqlCommand command = new SqlCommand(selectQuerry, dBCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataList.DataSource = table;
         }
 
-        private void clear()
+        private void getOrderTable()
         {
-            txtID.Clear();
-            txtName.Clear();
-            txtAge.Clear();
-            txtPhone.Clear();
-            txtPass.Clear();
+            string selectQuerry = "SELECT * FROM Bill";
+            SqlCommand command = new SqlCommand(selectQuerry, dBCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataSelling.DataSource = table;
         }
+       
+
+        private void dataSelling_Click(object sender, EventArgs e)
+        {
+            txtName.Text = dataSelling.SelectedRows[0].Cells[0].Value.ToString();
+            txtPrice.Text = dataSelling.SelectedRows[0].Cells[0].Value.ToString();  
+        }
+
+        int grandTotal = 0, n = 0;
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                string insertQuery = "INSERT INTO Product VALUES(" + txtID.Text + ", '" + txtName.Text + "', '" + txtAge.Text + "', '" + txtPhone.Text + "', '" + txtPass.Text + "')";
+                string insertQuery = "INSERT INTO Bill VALUES(" + txtId.Text + ", '" + lbSeller.Text + "', '" + lbDate.Text + "',  " + grandTotal.ToString() + ")";
                 SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();
-                MessageBox.Show("Seller Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Order Added Successfully", "Order Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dBCon.CloseCon();
-               getTable();
-                clear();
+                getOrderTable();
+               
             }
             catch (Exception ex)
             {
@@ -57,68 +80,39 @@ namespace InventoryMangementSystem
             }
         }
 
-        private void Seller_Load(object sender, EventArgs e)
+        private void Order_Load(object sender, EventArgs e)
         {
+            lbDate.Text = DateTime.Today.ToShortDateString();
             getTable();
+            getCategory();
+            getOrderTable();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (txtID.Text == "" || txtName.Text == "" || txtAge.Text == "" || txtPhone.Text == "" || txtPass.Text == "")
-                {
-                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    string updateQuery = "UPDATE Seller SET SellerName='" + txtName.Text + "', SellerAge=" + txtAge.Text + ", SellerPhone=" + txtPhone.Text + ", SellerPass=" + txtPass.Text + "'WHERE SellerId=" + txtID.Text + "";
-                    SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
-                    dBCon.OpenCon();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Seller Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBCon.CloseCon();
-                    getTable();
-                    clear();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            printer.Title = "Shoprite Ghana Limited";
+            printer.SubTitle = String.Format("Date: {0}", DateTime.Now.Date);
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "Thank you for shopping with us";
+            printer.FooterSpacing = 15;
+            printer.printDocument.DefaultPageSettings.Landscape = true;
+            printer.PrintDataGridView(dataList);
         }
 
-        private void dataSeller_Click(object sender, EventArgs e)
+        private void lbLogout_Click(object sender, EventArgs e)
         {
-            txtID.Text = dataSeller.SelectedRows[0].Cells[0].Value.ToString();
-            txtName.Text = dataSeller.SelectedRows[0].Cells[1].Value.ToString();
-            txtAge.Text = dataSeller.SelectedRows[0].Cells[2].Value.ToString();
-            txtPhone.Text = dataSeller.SelectedRows[0].Cells[3].Value.ToString();
-            txtPass.Text = dataSeller.SelectedRows[0].Cells[4].Value.ToString();
-
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void lbExit_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "")
-            {
-                MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string deleteQuery = "DELETE FROM Seller WHERE SellerId=" + txtID.Text + "";
-                    SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
-                    dBCon.OpenCon();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Seller Deleted Successfully", "Deleted Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBCon.CloseCon();
-                    getTable();
-                    clear();
-                }
-            }
+            Application.Exit();
         }
 
         private void lbLogout_MouseEnter(object sender, EventArgs e)
@@ -141,30 +135,27 @@ namespace InventoryMangementSystem
             lbExit.ForeColor = Color.Black;
         }
 
-        private void lbExit_Click(object sender, EventArgs e)
+        private void btnAddOd_Click(object sender, EventArgs e)
         {
-            Application.Exit(); 
-        }
-
-        private void lbLogout_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
-        }
-
-        private void btnProduct_Click(object sender, EventArgs e)
-        {
-            Product product = new Product();
-            product.Show();
-            this.Hide();
-        }
-
-        private void btnCategory_Click(object sender, EventArgs e)
-        {
-            Category category = new Category();
-            category.Show();
-            this.Hide();
+            if (txtName.Text == "" || txtQty.Text == "")
+            {
+                MessageBox.Show("Missing Information", "Information Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                int Total = Convert.ToInt32(txtPrice.Text) * Convert.ToInt32(txtQty.Text);
+                DataGridViewRow addRow = new DataGridViewRow();
+                addRow.CreateCells(dataOrder);
+                addRow.Cells[0].Value = ++n;
+                addRow.Cells[1].Value = txtName.Text;
+                addRow.Cells[2].Value = txtPrice.Text;
+                addRow.Cells[3].Value = txtQty.Text;
+                addRow.Cells[4].Value = Total;
+                dataOrder.Rows.Add(addRow);
+                grandTotal += Total;
+                lbAmount.Text = "GHC " + grandTotal;
+            }
+            
         }
     }
 }
