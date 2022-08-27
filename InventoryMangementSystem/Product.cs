@@ -102,7 +102,7 @@ namespace InventoryMangementSystem
                 }
                 else
                 {
-                    string updateQuery = "UPDATE Ptoduct SET ProdName='" + txtName.Text + "', ProdPrice=" + txtPrice.Text + ", ProdQty=" + txtQty.Text + ", ProdBB=" + txtBB.Text + ", ProdCat=" + cmbcategory.Text + "'WHERE ProdId=" + txtID.Text + "";
+                    string updateQuery = "UPDATE Product SET ProdName='" + txtName.Text + "', ProdPrice=" + txtPrice.Text + ", ProdQty=" + txtQty.Text + ", ProdBB=" + txtBB.Text + ", ProdCat=" + cmbcategory.Text + "'WHERE ProdId=" + txtID.Text + "";
                     SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
                     dBCon.OpenCon();
                     command.ExecuteNonQuery();
@@ -166,7 +166,7 @@ namespace InventoryMangementSystem
 
         private void lbExit_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void lbExit_MouseEnter(object sender, EventArgs e)
@@ -194,6 +194,11 @@ namespace InventoryMangementSystem
             Login login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
