@@ -11,22 +11,22 @@ using System.Windows.Forms;
 
 namespace InventoryMangementSystem
 {
-    public partial class Seller : Form
+    public partial class Attendant : Form
     {
         DBConnect dBCon = new DBConnect();
-        public Seller()
+        public Attendant()
         {
             InitializeComponent();
         }
 
         private void getTable()
         {
-            string selectQuerry = "SELECT * FROM Seller";
+            string selectQuerry = "SELECT * FROM Attendant";
             SqlCommand command = new SqlCommand(selectQuerry, dBCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            dataSeller.DataSource = table;
+            dataAttendant.DataSource = table;
         }
 
         private void clear()
@@ -46,7 +46,7 @@ namespace InventoryMangementSystem
                 SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();
-                MessageBox.Show("Seller Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Attendant Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dBCon.CloseCon();
                getTable();
                 clear();
@@ -57,7 +57,7 @@ namespace InventoryMangementSystem
             }
         }
 
-        private void Seller_Load(object sender, EventArgs e)
+        private void Attendant_Load(object sender, EventArgs e)
         {
             getTable();
         }
@@ -72,11 +72,11 @@ namespace InventoryMangementSystem
                 }
                 else
                 {
-                    string updateQuery = "UPDATE Seller SET SellerName='" + txtName.Text + "', SellerAge=" + txtAge.Text + ", SellerPhone=" + txtPhone.Text + ", SellerPass=" + txtPass.Text + "'WHERE SellerId=" + txtID.Text + "";
+                    string updateQuery = "UPDATE Attendant SET AttendantName='" + txtName.Text + "', AttendantAge=" + txtAge.Text + ", AttendantPhone=" + txtPhone.Text + ", AttendantPass=" + txtPass.Text + "'WHERE AttendantId=" + txtID.Text + "";
                     SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
                     dBCon.OpenCon();
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Seller Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Attendant Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dBCon.CloseCon();
                     getTable();
                     clear();
@@ -89,13 +89,13 @@ namespace InventoryMangementSystem
             }
         }
 
-        private void dataSeller_Click(object sender, EventArgs e)
+        private void dataAttendant_Click(object sender, EventArgs e)
         {
-            txtID.Text = dataSeller.SelectedRows[0].Cells[0].Value.ToString();
-            txtName.Text = dataSeller.SelectedRows[0].Cells[1].Value.ToString();
-            txtAge.Text = dataSeller.SelectedRows[0].Cells[2].Value.ToString();
-            txtPhone.Text = dataSeller.SelectedRows[0].Cells[3].Value.ToString();
-            txtPass.Text = dataSeller.SelectedRows[0].Cells[4].Value.ToString();
+            txtID.Text = dataAttendant.SelectedRows[0].Cells[0].Value.ToString();
+            txtName.Text = dataAttendant.SelectedRows[0].Cells[1].Value.ToString();
+            txtAge.Text = dataAttendant.SelectedRows[0].Cells[2].Value.ToString();
+            txtPhone.Text = dataAttendant.SelectedRows[0].Cells[3].Value.ToString();
+            txtPass.Text = dataAttendant.SelectedRows[0].Cells[4].Value.ToString();
 
         }
 
@@ -109,11 +109,11 @@ namespace InventoryMangementSystem
             {
                 if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    string deleteQuery = "DELETE FROM Seller WHERE SellerId=" + txtID.Text + "";
+                    string deleteQuery = "DELETE FROM Attendant WHERE AttendantId=" + txtID.Text + "";
                     SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
                     dBCon.OpenCon();
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Seller Deleted Successfully", "Deleted Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Attendant Deleted Successfully", "Deleted Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dBCon.CloseCon();
                     getTable();
                     clear();
@@ -164,6 +164,13 @@ namespace InventoryMangementSystem
         {
             Category category = new Category();
             category.Show();
+            this.Hide();
+        }
+
+        private void btnSelling_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+            order.Show();
             this.Hide();
         }
     }

@@ -201,10 +201,17 @@ namespace InventoryMangementSystem
 
         }
 
-        private void btnSeller_Click(object sender, EventArgs e)
+        private void btnAttendant_Click(object sender, EventArgs e)
         {
-            Seller seller = new Seller();  
-            seller.Show();
+            Attendant Attendant = new Attendant();  
+            Attendant.Show();
+            this.Hide();
+        }
+
+        private void btnSelling_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+            order.Show();
             this.Hide();
         }
     }

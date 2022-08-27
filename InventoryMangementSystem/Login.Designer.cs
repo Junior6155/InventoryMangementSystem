@@ -145,6 +145,7 @@
             this.btnLogin.Size = new System.Drawing.Size(109, 53);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "LOGIN";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lbClear
             // 
@@ -180,8 +181,8 @@
             this.cmbRole.ForeColor = System.Drawing.Color.Red;
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Items.AddRange(new object[] {
-            "ADMIN",
-            "ATTENDANT"});
+            "Admin",
+            "Attendant"});
             this.cmbRole.Location = new System.Drawing.Point(477, 60);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(127, 27);

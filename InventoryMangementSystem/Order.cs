@@ -65,7 +65,7 @@ namespace InventoryMangementSystem
         {
             try
             {
-                string insertQuery = "INSERT INTO Bill VALUES(" + txtId.Text + ", '" + lbSeller.Text + "', '" + lbDate.Text + "',  " + grandTotal.ToString() + ")";
+                string insertQuery = "INSERT INTO Bill VALUES(" + txtId.Text + ", '" + lbAttendant.Text + "', '" + lbDate.Text + "',  " + grandTotal.ToString() + ")";
                 SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();
@@ -83,6 +83,7 @@ namespace InventoryMangementSystem
         private void Order_Load(object sender, EventArgs e)
         {
             lbDate.Text = DateTime.Today.ToShortDateString();
+            lbAttendant.Text = Login.AttendantName;
             getTable();
             getCategory();
             getOrderTable();
@@ -134,6 +135,22 @@ namespace InventoryMangementSystem
         {
             lbExit.ForeColor = Color.Black;
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            getTable();
+        }
+
+        private void cmbCat_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string selectQuerry = "SELECT ProdName, ProdPrice FROM Product WHERE ProdCat='" + cmbCat.SelectedValue.ToString() + "'";
+            SqlCommand command = new SqlCommand(selectQuerry, dBCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataSelling.DataSource = table;
+        }
+
 
         private void btnAddOd_Click(object sender, EventArgs e)
         {

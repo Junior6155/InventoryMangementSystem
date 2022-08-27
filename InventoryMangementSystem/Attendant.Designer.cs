@@ -1,6 +1,6 @@
 ﻿namespace InventoryMangementSystem
 {
-    partial class Seller
+    partial class Attendant
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbLogout = new System.Windows.Forms.Label();
-            this.dataSeller = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataAttendant = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSeller)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataAttendant)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,10 +70,10 @@
             this.lbLogout.MouseEnter += new System.EventHandler(this.lbLogout_MouseEnter);
             this.lbLogout.MouseLeave += new System.EventHandler(this.lbLogout_MouseLeave);
             // 
-            // dataSeller
+            // dataAttendant
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataSeller.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataAttendant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 11F);
@@ -81,8 +81,8 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataSeller.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataSeller.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataAttendant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataAttendant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Display", 11F);
@@ -90,35 +90,35 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataSeller.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataSeller.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataSeller.Location = new System.Drawing.Point(295, 147);
-            this.dataSeller.Name = "dataSeller";
-            this.dataSeller.RowHeadersVisible = false;
-            this.dataSeller.Size = new System.Drawing.Size(436, 352);
-            this.dataSeller.TabIndex = 24;
-            this.dataSeller.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataSeller.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dataSeller.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dataSeller.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataSeller.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataSeller.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dataSeller.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataSeller.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataSeller.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataSeller.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
-            this.dataSeller.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataSeller.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataSeller.ThemeStyle.HeaderStyle.Height = 23;
-            this.dataSeller.ThemeStyle.ReadOnly = false;
-            this.dataSeller.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataSeller.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataSeller.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
-            this.dataSeller.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataSeller.ThemeStyle.RowsStyle.Height = 22;
-            this.dataSeller.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataSeller.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataSeller.Click += new System.EventHandler(this.dataSeller_Click);
+            this.dataAttendant.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataAttendant.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataAttendant.Location = new System.Drawing.Point(295, 147);
+            this.dataAttendant.Name = "dataAttendant";
+            this.dataAttendant.RowHeadersVisible = false;
+            this.dataAttendant.Size = new System.Drawing.Size(436, 352);
+            this.dataAttendant.TabIndex = 24;
+            this.dataAttendant.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataAttendant.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataAttendant.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataAttendant.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataAttendant.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataAttendant.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataAttendant.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataAttendant.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataAttendant.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataAttendant.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
+            this.dataAttendant.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataAttendant.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataAttendant.ThemeStyle.HeaderStyle.Height = 23;
+            this.dataAttendant.ThemeStyle.ReadOnly = false;
+            this.dataAttendant.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataAttendant.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataAttendant.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
+            this.dataAttendant.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataAttendant.ThemeStyle.RowsStyle.Height = 22;
+            this.dataAttendant.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataAttendant.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataAttendant.Click += new System.EventHandler(this.dataAttendant_Click);
             // 
             // label6
             // 
@@ -126,9 +126,9 @@
             this.label6.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(233, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(197, 35);
+            this.label6.Size = new System.Drawing.Size(246, 35);
             this.label6.TabIndex = 20;
-            this.label6.Text = "MANAGE SELLER";
+            this.label6.Text = "MANAGE ATTENDANT";
             // 
             // btnUpdate
             // 
@@ -220,6 +220,7 @@
             this.btnSelling.TabIndex = 31;
             this.btnSelling.Text = "Order";
             this.btnSelling.UseVisualStyleBackColor = true;
+            this.btnSelling.Click += new System.EventHandler(this.btnSelling_Click);
             // 
             // btnProduct
             // 
@@ -346,7 +347,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.Controls.Add(this.dataSeller);
+            this.panel1.Controls.Add(this.dataAttendant);
             this.panel1.Controls.Add(this.txtPass);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -399,7 +400,7 @@
             this.label7.TabIndex = 22;
             this.label7.Text = "Password";
             // 
-            // Order
+            // Attendant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -411,11 +412,11 @@
             this.Controls.Add(this.btnCategory);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Order";
+            this.Name = "Attendant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Seller";
-            this.Load += new System.EventHandler(this.Seller_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSeller)).EndInit();
+            this.Text = "Attendant";
+            this.Load += new System.EventHandler(this.Attendant_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataAttendant)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -426,7 +427,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbLogout;
-        private Guna.UI2.WinForms.Guna2DataGridView dataSeller;
+        private Guna.UI2.WinForms.Guna2DataGridView dataAttendant;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
