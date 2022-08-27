@@ -157,7 +157,7 @@ namespace InventoryMangementSystem
 
         private void btnSeller_Click(object sender, EventArgs e)
         {
-            Seller seller = new Seller();
+            Order seller = new Order();
             seller.Show();
             this.Hide();
         }

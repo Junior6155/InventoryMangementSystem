@@ -1,6 +1,6 @@
 ﻿namespace InventoryMangementSystem
 {
-    partial class Seller
+    partial class Order
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbLogout = new System.Windows.Forms.Label();
             this.dataSeller = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -52,6 +50,8 @@
             this.btnCategory = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSeller)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,25 +72,25 @@
             // 
             // dataSeller
             // 
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            this.dataSeller.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Sitka Display", 11F);
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataSeller.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataSeller.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataSeller.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataSeller.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Sitka Display", 11F);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataSeller.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Display", 11F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataSeller.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataSeller.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataSeller.Location = new System.Drawing.Point(295, 147);
             this.dataSeller.Name = "dataSeller";
@@ -120,44 +120,11 @@
             this.dataSeller.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataSeller.Click += new System.EventHandler(this.dataSeller_Click);
             // 
-            // txtPass
-            // 
-            this.txtPass.BorderColor = System.Drawing.Color.Red;
-            this.txtPass.BorderRadius = 18;
-            this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPass.DefaultText = "";
-            this.txtPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPass.ForeColor = System.Drawing.Color.Red;
-            this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPass.Location = new System.Drawing.Point(107, 337);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '●';
-            this.txtPass.PlaceholderText = "";
-            this.txtPass.SelectedText = "";
-            this.txtPass.Size = new System.Drawing.Size(150, 30);
-            this.txtPass.TabIndex = 23;
-            this.txtPass.UseSystemPasswordChar = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 337);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 23);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Password";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(200, 11);
+            this.label6.Location = new System.Drawing.Point(233, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(197, 35);
             this.label6.TabIndex = 20;
@@ -251,7 +218,7 @@
             this.btnSelling.Name = "btnSelling";
             this.btnSelling.Size = new System.Drawing.Size(94, 43);
             this.btnSelling.TabIndex = 31;
-            this.btnSelling.Text = "Selling";
+            this.btnSelling.Text = "Order";
             this.btnSelling.UseVisualStyleBackColor = true;
             // 
             // btnProduct
@@ -399,7 +366,40 @@
             this.panel1.Size = new System.Drawing.Size(746, 516);
             this.panel1.TabIndex = 28;
             // 
-            // Seller
+            // txtPass
+            // 
+            this.txtPass.BorderColor = System.Drawing.Color.Red;
+            this.txtPass.BorderRadius = 18;
+            this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPass.DefaultText = "";
+            this.txtPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPass.ForeColor = System.Drawing.Color.Red;
+            this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPass.Location = new System.Drawing.Point(107, 337);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '●';
+            this.txtPass.PlaceholderText = "";
+            this.txtPass.SelectedText = "";
+            this.txtPass.Size = new System.Drawing.Size(150, 30);
+            this.txtPass.TabIndex = 23;
+            this.txtPass.UseSystemPasswordChar = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(28, 337);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 23);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Password";
+            // 
+            // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -411,7 +411,7 @@
             this.Controls.Add(this.btnCategory);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Seller";
+            this.Name = "Order";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seller";
             this.Load += new System.EventHandler(this.Seller_Load);
@@ -427,8 +427,6 @@
 
         private System.Windows.Forms.Label lbLogout;
         private Guna.UI2.WinForms.Guna2DataGridView dataSeller;
-        private Guna.UI2.WinForms.Guna2TextBox txtPass;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
@@ -446,5 +444,7 @@
         private System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2TextBox txtPass;
+        private System.Windows.Forms.Label label7;
     }
 }

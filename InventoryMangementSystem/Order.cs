@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace InventoryMangementSystem
 {
-    public partial class Seller : Form
+    public partial class Order : Form
     {
         DBConnect dBCon = new DBConnect();
-        public Seller()
+        public Order()
         {
             InitializeComponent();
         }
