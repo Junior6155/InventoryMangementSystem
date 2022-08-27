@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataPro = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtQty = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,10 +53,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbExit = new System.Windows.Forms.Label();
             this.btnSeller = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.btnSelling = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
-            this.dataPro = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lbLogout = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPro)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +87,56 @@
             this.panel1.Size = new System.Drawing.Size(746, 516);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // dataPro
+            // 
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            this.dataPro.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Sitka Display", 11F);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.dataPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Sitka Display", 11F);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataPro.DefaultCellStyle = dataGridViewCellStyle27;
+            this.dataPro.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataPro.Location = new System.Drawing.Point(295, 147);
+            this.dataPro.Name = "dataPro";
+            this.dataPro.RowHeadersVisible = false;
+            this.dataPro.Size = new System.Drawing.Size(436, 352);
+            this.dataPro.TabIndex = 24;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataPro.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataPro.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataPro.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataPro.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataPro.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataPro.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
+            this.dataPro.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataPro.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataPro.ThemeStyle.HeaderStyle.Height = 23;
+            this.dataPro.ThemeStyle.ReadOnly = false;
+            this.dataPro.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataPro.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataPro.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
+            this.dataPro.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataPro.ThemeStyle.RowsStyle.Height = 22;
+            this.dataPro.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataPro.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataPro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPro_CellContentClick);
             // 
             // txtQty
             // 
@@ -140,6 +190,7 @@
             this.btnRefresh.TabIndex = 19;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // cmbSearch
             // 
@@ -149,6 +200,7 @@
             this.cmbSearch.Size = new System.Drawing.Size(154, 29);
             this.cmbSearch.TabIndex = 18;
             this.cmbSearch.Text = "Select Category";
+            this.cmbSearch.SelectionChangeCommitted += new System.EventHandler(this.cmbSearch_SelectionChangeCommitted);
             // 
             // btnUpdate
             // 
@@ -338,11 +390,14 @@
             this.lbExit.AutoSize = true;
             this.lbExit.Font = new System.Drawing.Font("Century", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbExit.ForeColor = System.Drawing.Color.Red;
-            this.lbExit.Location = new System.Drawing.Point(823, 1);
+            this.lbExit.Location = new System.Drawing.Point(858, 1);
             this.lbExit.Name = "lbExit";
             this.lbExit.Size = new System.Drawing.Size(35, 33);
             this.lbExit.TabIndex = 10;
             this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
+            this.lbExit.MouseEnter += new System.EventHandler(this.lbExit_MouseEnter);
+            this.lbExit.MouseLeave += new System.EventHandler(this.lbExit_MouseLeave);
             // 
             // btnSeller
             // 
@@ -354,17 +409,6 @@
             this.btnSeller.TabIndex = 16;
             this.btnSeller.Text = "Seller";
             this.btnSeller.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(12, 444);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(85, 43);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Logout";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // btnSelling
             // 
@@ -389,64 +433,28 @@
             this.btnCategory.UseVisualStyleBackColor = true;
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
-            // dataPro
+            // lbLogout
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dataPro.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sitka Display", 11F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sitka Display", 11F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataPro.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataPro.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataPro.Location = new System.Drawing.Point(295, 147);
-            this.dataPro.Name = "dataPro";
-            this.dataPro.RowHeadersVisible = false;
-            this.dataPro.Size = new System.Drawing.Size(436, 352);
-            this.dataPro.TabIndex = 24;
-            this.dataPro.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataPro.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dataPro.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dataPro.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataPro.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataPro.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dataPro.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataPro.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataPro.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataPro.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
-            this.dataPro.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataPro.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataPro.ThemeStyle.HeaderStyle.Height = 23;
-            this.dataPro.ThemeStyle.ReadOnly = false;
-            this.dataPro.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataPro.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataPro.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Sitka Display", 11F);
-            this.dataPro.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataPro.ThemeStyle.RowsStyle.Height = 22;
-            this.dataPro.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataPro.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataPro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPro_CellContentClick);
+            this.lbLogout.AutoSize = true;
+            this.lbLogout.Font = new System.Drawing.Font("Sylfaen", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLogout.ForeColor = System.Drawing.Color.Black;
+            this.lbLogout.Location = new System.Drawing.Point(6, 475);
+            this.lbLogout.Name = "lbLogout";
+            this.lbLogout.Size = new System.Drawing.Size(100, 35);
+            this.lbLogout.TabIndex = 27;
+            this.lbLogout.Text = "Logout";
+            this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
+            this.lbLogout.MouseEnter += new System.EventHandler(this.lbLogout_MouseEnter);
+            this.lbLogout.MouseLeave += new System.EventHandler(this.lbLogout_MouseLeave);
             // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 565);
+            this.Controls.Add(this.lbLogout);
             this.Controls.Add(this.btnCategory);
             this.Controls.Add(this.btnSelling);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.btnSeller);
             this.Controls.Add(this.lbExit);
             this.Controls.Add(this.panel1);
@@ -486,11 +494,11 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSeller;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnSelling;
         private System.Windows.Forms.Button btnCategory;
         private Guna.UI2.WinForms.Guna2TextBox txtQty;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2DataGridView dataPro;
+        private System.Windows.Forms.Label lbLogout;
     }
 }

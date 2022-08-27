@@ -131,14 +131,69 @@ namespace InventoryMangementSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string deleteQuery = "DELETE FROM Product WHERE ProdId=" + txtID.Text + "";
-            SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
-            dBCon.OpenCon();
-            command.ExecuteNonQuery();
-            MessageBox.Show("Product Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            dBCon.CloseCon();
+            if (txtID.Text == "")
+            {
+                MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string deleteQuery = "DELETE FROM Product WHERE ProdId=" + txtID.Text + "";
+                SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
+                dBCon.OpenCon();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Product Deleted Successfully", "Deleted Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dBCon.CloseCon();
+                getTable();
+                clear();
+            }
+            
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
             getTable();
-            clear();
+        }
+
+        private void cmbSearch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string selectQuerry = "SELECT * FROM Product WHERE ProdCat='" + cmbSearch.SelectedValue.ToString() + "'"; ;
+            SqlCommand command = new SqlCommand(selectQuerry, dBCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataPro.DataSource = table;
+        }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbExit_MouseEnter(object sender, EventArgs e)
+        {
+            lbExit.ForeColor = Color.Red;
+        }
+
+        private void lbExit_MouseLeave(object sender, EventArgs e)
+        {
+            lbExit.ForeColor = Color.Black;
+        }
+
+        private void lbLogout_MouseEnter(object sender, EventArgs e)
+        {
+            lbLogout.ForeColor = Color.Red;
+        }
+
+        private void lbLogout_MouseLeave(object sender, EventArgs e)
+        {
+            lbLogout.ForeColor = Color.Black;
+        }
+
+        private void lbLogout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }
