@@ -105,6 +105,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "";
+            this.txtPrice.ReadOnly = true;
             this.txtPrice.SelectedText = "";
             this.txtPrice.Size = new System.Drawing.Size(150, 30);
             this.txtPrice.TabIndex = 13;
@@ -319,6 +320,7 @@
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
+            this.txtName.ReadOnly = true;
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(150, 30);
             this.txtName.TabIndex = 14;
