@@ -39,7 +39,7 @@ namespace InventoryMangementSystem
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            dataList.DataSource = table;
+            dataSelling.DataSource = table;
         }
 
         private void getOrderTable()
@@ -56,7 +56,7 @@ namespace InventoryMangementSystem
         private void dataSelling_Click(object sender, EventArgs e)
         {
             txtName.Text = dataSelling.SelectedRows[0].Cells[0].Value.ToString();
-            txtPrice.Text = dataSelling.SelectedRows[0].Cells[0].Value.ToString();  
+            txtPrice.Text = dataSelling.SelectedRows[0].Cells[1].Value.ToString();  
         }
 
         int grandTotal = 0, n = 0;
@@ -152,6 +152,10 @@ namespace InventoryMangementSystem
             dataSelling.DataSource = table;
         }
 
+        private void dataSelling_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void btnAddOd_Click(object sender, EventArgs e)
         {
