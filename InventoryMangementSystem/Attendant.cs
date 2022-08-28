@@ -42,7 +42,7 @@ namespace InventoryMangementSystem
         {
             try
             {
-                string insertQuery = "INSERT INTO Product VALUES(" + txtID.Text + ", '" + txtName.Text + "', '" + txtAge.Text + "', '" + txtPhone.Text + "', '" + txtPass.Text + "')";
+                string insertQuery = "INSERT INTO Attendant VALUES(" + txtID.Text + ", '" + txtName.Text + "', '" + txtAge.Text + "', '" + txtPhone.Text + "', '" + txtPass.Text + "')";
                 SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();
@@ -173,5 +173,7 @@ namespace InventoryMangementSystem
             order.Show();
             this.Hide();
         }
+
+       
     }
 }

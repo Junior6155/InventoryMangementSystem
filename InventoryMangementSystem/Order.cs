@@ -14,8 +14,8 @@ namespace InventoryMangementSystem
 {
     public partial class Order : Form
     {
-        DBConnect dBCon = new DBConnect();
-        DGVPrinter printer = new DGVPrinter();
+        DBConnect dBCon = new DBConnect();      
+        DGVPrinter printer = new DGVPrinter(); 
         public Order()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace InventoryMangementSystem
 
         private void getTable()
         {
-            string selectQuerry = "SELECT * FROM Bill";
+            string selectQuerry = "SELECT ProdName, ProdPrice FROM Product";
             SqlCommand command = new SqlCommand(selectQuerry, dBCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
@@ -89,6 +89,7 @@ namespace InventoryMangementSystem
             getOrderTable();
         }
 
+        //Used DGVPrinter from Github
         private void btnPrint_Click(object sender, EventArgs e)
         {
             printer.Title = "Shoprite Ghana Limited";
