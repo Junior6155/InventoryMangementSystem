@@ -47,10 +47,7 @@ namespace InventoryMangementSystem
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
 
         private void Category_Load(object sender, EventArgs e)
         {
