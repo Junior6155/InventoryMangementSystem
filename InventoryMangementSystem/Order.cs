@@ -39,7 +39,7 @@ namespace InventoryMangementSystem
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            dataSelling.DataSource = table;
+            dataList.DataSource = table;
         }
 
         private void getOrderTable()

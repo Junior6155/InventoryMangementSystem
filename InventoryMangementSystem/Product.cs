@@ -102,7 +102,7 @@ namespace InventoryMangementSystem
                 }
                 else
                 {
-                    string updateQuery = "UPDATE Product SET ProdName='" + txtName.Text + "', ProdPrice=" + txtPrice.Text + ", ProdQty=" + txtQty.Text + ", ProdBB=" + txtBB.Text + ", ProdCat='" + cmbcategory.Text + "'WHERE ProdId="+ txtID.Text +"";
+                    string updateQuery = "UPDATE Product SET ProdName='" + txtName.Text + "', ProdPrice=" + txtPrice.Text + ", ProdQty=" + txtQty.Text + ", ProdBB=" + txtBB.Text + ", ProdCat='" + cmbcategory.Text + "WHERE ProdId="+ txtID.Text +"";
                     SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
                     dBCon.OpenCon();
                     command.ExecuteNonQuery();

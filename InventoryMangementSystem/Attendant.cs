@@ -72,7 +72,7 @@ namespace InventoryMangementSystem
                 }
                 else
                 {
-                    string updateQuery = "UPDATE Attendant SET AttendantName='" + txtName.Text + "', AttendantAge=" + txtAge.Text + ", AttendantPhone=" + txtPhone.Text + ", AttendantPass=" + txtPass.Text + "'WHERE AttendantId=" + txtID.Text + "";
+                    string updateQuery = "UPDATE Attendant SET AttendantName='" + txtName.Text + "', AttendantAge=" + txtAge.Text + ", AttendantPhone=" + txtPhone.Text + ", AttendantPass=" + txtPass.Text + "WHERE AttendantId=" + txtID.Text + "";
                     SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
                     dBCon.OpenCon();
                     command.ExecuteNonQuery();
